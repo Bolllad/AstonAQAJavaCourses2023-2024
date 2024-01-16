@@ -1,7 +1,8 @@
 public class Park {
 
     public static class Attraction {
-        String openTime;
-        double ticketPrice;
+        protected String info;
+        protected String openTime;
+        protected double ticketPrice;
     }
 }
