@@ -1,17 +1,16 @@
 public class Lesson_2 {
     public static void main(String[] args) {
-        checkSumSign();
-        printColor();
-        compareNumbers();
+        printThreeWords();
+        checkSumSign(2, 1);
+        printColor(58);
+        compareNumbers(6, 2);
     }
 
-     static void printThreeWords() {
+    static void printThreeWords() {
         System.out.println("Orange\nBanana\nApple");
     }
 
-    static void checkSumSign() {
-        int a = 2, b = 1;
-
+    static void checkSumSign(int a, int b) {
         if ((a + b) >= 0) {
             System.out.println("Сумма положительная");
         }
@@ -20,21 +19,17 @@ public class Lesson_2 {
         }
     }
 
-    static void printColor() {
-        int value = 58;
-
+    static void printColor(int value) {
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
         }
     }
 
-    static void compareNumbers() {
-        int a = 6, b = 2;
-
+    static void compareNumbers(int a, int b) {
         if (a >= b) {
             System.out.println("a >= b");
         } else {

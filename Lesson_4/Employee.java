@@ -1,7 +1,10 @@
 public class Employee {
-    String fullName, position, email, phoneNumber;
-    double wage;
-    int age;
+    protected String fullName;
+    protected String position;
+    protected String email;
+    protected String phoneNumber;
+    protected double wage;
+    protected int age;
 
     public Employee(String fullName, String position, String email, String phoneNumber, double wage, int age) {
         this.fullName = fullName;
