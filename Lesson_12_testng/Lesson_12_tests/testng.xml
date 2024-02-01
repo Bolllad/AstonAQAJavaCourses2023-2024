@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<suite name = "Factorial test Suite">
+    <test name = "FactorialTestng">
+        <classes>
+            <class name = "FactorialTestng" />
+        </classes>
+    </test>
+</suite>
