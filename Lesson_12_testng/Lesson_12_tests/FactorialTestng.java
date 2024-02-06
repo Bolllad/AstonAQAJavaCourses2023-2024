@@ -1,26 +1,16 @@
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 class FactorialTestng {
-    Factorial factorial;
+    Factorial factorial = new Factorial();
 
-    @BeforeMethod
-    void setUp(){
-        factorial = new Factorial();
+    @DataProvider (name = "int-data-provider")
+    public Object[][] dpMethod() {
+        return new Object[][] {{5, 120}, {7, 5040}, {10, 3628800}};
     }
 
-    @Test(description = "Testing if factorial of 5 equals 120")
-    void testFactorialOfFive(){
-        assert factorial.CalculateFactorial(5) == 120;
-    }
-
-    @Test(description = "Testing if factorial of 7 equals 5040")
-    void testFactorialOfSeven(){
-        assert factorial.CalculateFactorial(7) == 5040;
-    }
-
-    @Test(description = "Testing if factorial of 10 equals 3628800")
-    void testFactorialOfTen(){
-        assert factorial.CalculateFactorial(10) == 3628800;
+    @Test(description = "Testing factorial method", dataProvider = "int-data-provider")
+    void testFactorial(int factorialOf, int expected){
+        assert factorial.CalculateFactorial(factorialOf) == expected;
     }
 }
