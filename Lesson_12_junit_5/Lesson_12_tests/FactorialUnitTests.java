@@ -1,31 +1,15 @@
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class FactorialUnitTests {
-    Factorial factorial;
+    Factorial factorial = new Factorial();
 
-    @BeforeEach
-    void setUp(){
-        factorial = new Factorial();
-    }
-
-    @Test
-    @DisplayName("Testing factorial of 5")
-    void testFactorialOfFive(){
-        assertEquals(120, factorial.CalculateFactorial(5));
-    }
-
-    @Test
-    @DisplayName("Testing factorial of 7")
-    void testFactorialOfSeven(){
-        assertEquals(5040, factorial.CalculateFactorial(7));
-    }
-
-    @Test
-    @DisplayName("Testing factorial of 10")
-    void testFactorialOfTen(){
-        assertEquals(3628800, factorial.CalculateFactorial(10));
+    @ParameterizedTest
+    @CsvSource({"120, 5", "5040, 7", "3628800, 10"})
+    @DisplayName("Testing factorial method")
+    void testFactorial(int expected, int factorialOf){
+        Assert.assertEquals(expected, factorial.CalculateFactorial(factorialOf));
     }
 }
